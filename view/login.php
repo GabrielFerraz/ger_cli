@@ -2,7 +2,7 @@
 	require_once('../include/header.php');
 ?>
 
-		<div id="content">
+		<div id="body">
 			<div id="login">
 				<div id="loginBox">
 					<form id="formLogin">
