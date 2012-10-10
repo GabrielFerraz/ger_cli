@@ -1,0 +1,76 @@
+html, body, div, span{
+	border:0 none;
+	font-size:100%;
+	margin:0;
+	outline:0 none;
+	padding:0;
+	font-family: Arial;
+}
+#head{
+	height: 160px;
+	width: 800px;
+	margin: 0 auto 0 auto;
+}
+#content{
+	height: 500px;
+	width: 100%;
+	background-image:url('imagens/degrade.jpg');
+	background-repeat: repeat-x;
+	margin:0px;
+	padding:0px;
+	border-top: 1px solid #999999;
+}
+#center{
+	height: 400px;
+	width: 800px;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid #999999;
+	background-color:#ffffff;
+}
+#logo{
+	background-image: url('imagens/logo.jpg');
+	height: 125px;
+	width: 165px;
+	float: right;
+	margin-top: 12px;
+}
+#menu{
+	font-family: 'Oswald', sans-serif;
+	font-weight: bold;
+	float:left;
+	position: relative;
+	bottom: -130px;
+}
+a{
+	text-decoration: none;
+	color: #999999;
+}
+
+#login{
+	height: 250px;
+	width: 250px;
+	margin: 80px auto 0 auto;
+	border: 1px solid #999999;
+	background-color:#ffffff;
+}
+#loginBox{
+	font-family: 'Tahoma', sans-serif;
+	height: 116px;
+	width: 150px;
+	margin: 60px auto 0 auto;
+}
+
+#enviar{
+	float: right;
+}
+
+a:hover{
+	color: #cccccc;
+}
+
+span.spanMenu{
+	margin: 0 4px 0 4px;
+	font-size: 20px;
+}
