@@ -78,7 +78,7 @@ Class Cliente {
 
 	public function delete() {
 		global $database;
-		$sql = "DELETE FROM ".self::$table_name." WHERE id=$this->id";
+		$sql = "DELETE FROM clientes WHERE id=$this->id";
 		if(!$database->query($sql)) {
 			echo mysql_error();
 			}

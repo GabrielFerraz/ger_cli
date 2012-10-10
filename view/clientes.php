@@ -26,13 +26,13 @@
 									echo $cliente->nome;
 									echo "</td>";
 									echo "<td class='center'>";
-									echo "<a href='#'>Ver</a>";
+									echo "<a href='ver_cliente.php?id=$cliente->id'>Ver</a>";
 									echo "</td>";
 									echo "<td class='center'>";
-									echo "<a href='#'>Editar</a>";
+									echo "<a href='edit_cliente.php?id=$cliente->id'>Editar</a>";
 									echo "</td>";
 									echo "<td class='center'>";
-									echo "<a href='#'>Apagar</a>";
+									echo "<a href='../controller/cliente.php?action=delete&id=$cliente->id'>Apagar</a>";
 									echo "</td>";
 								echo "</tr>";
 							}
@@ -40,7 +40,7 @@
 						</tbody>
 						<tfoot>
 						   <tr>
-								<th>Titulo</th>
+								<th>Nome</th>
 								<th>Ver</th>
 								<th>Editar</th>
 								<th>Apagar</th>

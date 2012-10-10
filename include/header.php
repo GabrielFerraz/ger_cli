@@ -15,6 +15,6 @@
 				<span class="spanMenu">|</span>
 				<a class="linkMenu" href="#">Negociações</a>
 				<span class="spanMenu">|</span>
-				<a class="linkMenu" href="#">Clientes</a>
+				<a class="linkMenu" href="../view/clientes.php">Clientes</a>
 			</div>
 		</div>

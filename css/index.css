@@ -21,7 +21,7 @@ html, body, div, span{
 	border-top: 1px solid #999999;
 }
 #center{
-	height: 400px;
+	min-height: 500px;
 	width: 800px;
 	margin-top: 10px;
 	margin-left: auto;
