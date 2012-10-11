@@ -20,6 +20,10 @@ Class Cliente {
 		$user = self::find_by_sql($sql);
 		return empty($user) ? false : array_shift($user);
 	}
+	public function logout(){
+          unset($_SESSION['user_id']);
+	    unset($_SESSION['login']);
+	}
 		
 	public static function find_all() {
 		$result_array = self::find_by_sql("SELECT * FROM ".self::$table_name." ");
