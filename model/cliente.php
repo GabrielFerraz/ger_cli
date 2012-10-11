@@ -6,11 +6,21 @@ Class Cliente {
 	
 	public static $table_name = "clientes";
 	public $nome;
+	public $login;
+	public $senha;
 	public $email;
 	public $telefone;
 	public $id;
-	
-	
+
+
+	public function authenticate($login,$senha) {
+		$sql = "SELECT * FROM ".self::$table_name." ";
+		$sql .= "WHERE login='{$login}' AND senha='{$senha}' LIMIT 1";
+		echo $sql;
+		$user = self::find_by_sql($sql);
+		return empty($user) ? false : array_shift($user);
+	}
+		
 	public static function find_all() {
 		$result_array = self::find_by_sql("SELECT * FROM ".self::$table_name." ");
 		return $result_array;
