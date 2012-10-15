@@ -4,7 +4,7 @@ Class Database {
 	private $db_name = "gerCli";
 	private $username = "root";
 	private $connection;
-	private $password = "usbw";
+	private $password = "";
 	
 	
 	public function __construct() {
