@@ -6,10 +6,11 @@
 if (isset($_POST)){
 	$user = $_POST['login'];
 	$pass = $_POST['senha'];
-	$aut = new Cliente;
+	$aut = new User;
 	if($aut->authenticate($user,$pass)) {
 	    session_start();
 	   	$_SESSION['user_id'] = $aut->id;
+	   	$_SESSION['permissao'] = $aut->permissao;
 	    $_SESSION['login'] = true;
 	    header("location: ../view/admin_home.php");
 	}
