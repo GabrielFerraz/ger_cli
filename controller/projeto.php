@@ -2,35 +2,33 @@
 	require_once "../model/projeto.php";
 	require_once "../model/database.php";
 	
-	$negociacao = new Projeto;
+	$projeto = new Projeto;
 	$action = $_GET['action'];
 	$id = $_GET['id'];
 	switch($action){
 		case 'create':
-			$negociacao->id_cliente = $_POST['cliente'];
-			$negociacao->responsavel = $_POST['responsavel'];
-			$negociacao->reuniao = $_POST['reuniao'];
-			$negociacao->proposta = $_POST['proposta'];
-			$negociacao->status = $_POST['status'];
-			$negociacao->create();
-			header("location: ../view/negociacoes.php");
+			$projeto->id_negociacao = $_POST['negociacao'];
+			$projeto->data_inicio = $_POST['data_inicio'];
+			$projeto->data_final = $_POST['data_final'];
+			$projeto->parcelas = $_POST['parcelas'];
+			$projeto->create();
+			header("location: ../view/projetos.php");
 			break;
 		case "delete":
-			$negociacao = Negociacao::find_by_id($id);
-			$negociacao->delete();
-			header("location: ../view/negociacoes.php");
+			$projeto = Projeto::find_by_id($id);
+			$projeto->delete();
+			header("location: ../view/projetos.php");
 			break;
 		case "update":
-			$negociacao = Negociacao::find_by_id($id);
-			$negociacao->id_cliente = $_POST['cliente'];
-			$negociacao->responsavel = $_POST['responsavel'];
-			$negociacao->reuniao = $_POST['reuniao'];
-			$negociacao->proposta = $_POST['proposta'];
-			$negociacao->status = $_POST['status'];
+			$projeto = Projeto::find_by_id($id);
+			$projeto->id_negociacao = $_POST['negociacao'];
+			$projeto->data_inicio = $_POST['data_inicio'];
+			$projeto->data_final = $_POST['data_final'];
+			$projeto->parcelas = $_POST['parcelas'];
 			echo $id;
-			$negociacao->update();
+			$projeto->update();
 			
-			header("location: ../view/negociacoes.php");
+			header("location: ../view/projetos.php");
 			break;
 	}
 

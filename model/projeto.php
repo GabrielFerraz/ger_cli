@@ -2,16 +2,15 @@
 
 Class Projeto {
 	
-	/*protected static $db_fields = array('id_cliente','responsavel','reuniao','proposta','status','id');
+	protected static $db_fields = array('id','id_nogociacao','data_inicio','data_final','parcelas');
 	
-	public static $table_name = "solicitacoes";
-	public $id_cliente;
-	public $responsavel;
-	public $reuniao;
-	public $proposta;
-	public $status;
+	public static $table_name = "projetos";
 	public $id;
-	*/
+	public $id_nogociacao;
+	public $data_inicio;
+	public $data_final;
+	public $parcelas;
+
 	
 	public static function find_all() {
 		$result_array = self::find_by_sql("SELECT * FROM ".self::$table_name." ");
