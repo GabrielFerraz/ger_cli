@@ -3,7 +3,7 @@
 <html>
 	<head>
 	<?php
-	    if ($_SESSION['login']){
+	    if (isset($_SESSION['login'])){
 	        header("location: ../view/login.php");
 	    }
 	?>

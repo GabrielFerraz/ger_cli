@@ -2,11 +2,11 @@
 
 Class Projeto {
 	
-	protected static $db_fields = array('id','id_nogociacao','data_inicio','data_final','parcelas');
+	protected static $db_fields = array('id','id_negociacao','data_inicio','data_final','parcelas');
 	
 	public static $table_name = "projetos";
 	public $id;
-	public $id_nogociacao;
+	public $id_negociacao;
 	public $data_inicio;
 	public $data_final;
 	public $parcelas;

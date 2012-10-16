@@ -2,6 +2,11 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
+	<?php
+	    if ($_SESSION['login']){
+	        header("location: ../view/login.php");
+	    }
+	?>
 		<title>Gerenciador</title>
 		<link rel="stylesheet" type="text/css" href="../css/index.css">
 		<script>
