@@ -1,4 +1,5 @@
 <?php
+require_once "../model/user.php";
 
 	$user = $_POST['login'];
 	$pass = $_POST['senha'];

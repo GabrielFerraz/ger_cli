@@ -7,9 +7,9 @@
 			session_start();
 			$_SESSION['login'] = false;
 		}
-	    if ($_SESSION['login']){
-	        header("location: ../view/login.php");
-	    }
+		if($_SESSION["login"]==false) {
+			header("location: ../view/login.php");
+		}
 	?>
 		<title>Gerenciador</title>
 		<link rel="stylesheet" type="text/css" href="../css/index.css">

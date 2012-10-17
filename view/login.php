@@ -1,5 +1,5 @@
 <?php
-	require_once('../include/header.php');
+	require_once('../include/header_login.php');
 	require_once "../model/database.php";
 	require_once "../model/cliente.php";
 
@@ -12,7 +12,7 @@ if(isset($_SESSION['flash_notice'])) {
 		<div id="login">
 			<div id="loginBox">
 			
-				<form id="formLogin" action="login.php" method="post">
+				<form id="formLogin" action="../controller/login.php" method="post">
 					Login:<br />
 					<input type="text" name="login" /><br />
 					Senha:<br />
