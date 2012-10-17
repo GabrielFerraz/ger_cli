@@ -1,37 +1,44 @@
 <?php
 	require_once "../include/header.php";
 	require_once "../model/cliente.php";
-	require_once "../model/solicitacao.php";
+	require_once "../model/negociacao.php";
 	require_once "../model/database.php";
 ?>
 
 		<div id="body">
 			<div id="center">
-				<h2 >Solicitações</h2>
+				<h2 >Negociações</h2>
 				<div id="content">
 					<table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
 						<thead>
 							<tr>
 								<th>Cliente</th>  
-								<th>Solicitação</th>
+								<th>Responsável</th>
+								<th>Reunião</th>
+								<th>Proposta</th>
 								<th>Status</th>
 							</tr>
 						</thead>
 						<tbody>
 						<?php
-							$solicitacoes = Solicitacao::find_all();
-							foreach($solicitacoes as $solicitacao) {
-								$cliente = Cliente::find_by_id($solicitacao->id_cliente);
-								$id = 0;
-								echo '<tr onload="mudaCor(document.getElementById('."'$id'".'),'."'$solicitacao->status'".')" class="gradeA" id="$id">';
+							$negociacoes = Negociacao::find_all();
+							foreach($negociacoes as $negociacao) {
+								$cliente = Cliente::find_by_id($negociacao->id_cliente);
+								echo '<tr class="gradeA">';
 									echo "<td>";
-									echo "<a href='edit_solicitacao.php?id=$solicitacao->id'>$cliente->nome</a>";
+									echo "<a href='edit_negociacao.php?id=$negociacao->id'>$cliente->nome</a>";
 									echo "</td>";
 									echo "<td>";
-									echo $solicitacao->pedido;
+									echo $negociacao->responsavel;
 									echo "</td>";
 									echo "<td>";
-									echo $solicitacao->status;
+									echo $negociacao->reuniao;
+									echo "</td>";
+									echo "<td>";
+									echo $negociacao->proposta;
+									echo "</td>";
+									echo "<td>";
+									echo $negociacao->status;
 									echo "</td>";
 								echo "</tr>";
 							}
@@ -40,13 +47,14 @@
 						<tfoot>
 						   <tr>
 								<th>Cliente</th>  
-								<th>Solicitação</th>
+								<th>Responsável</th>
+								<th>Reunião</th>
+								<th>Proposta</th>
 								<th>Status</th>
 							</tr> 
 						 </tfoot> 
 					</table>
 				</div>
-				<a href="add_solicitacao.php">Nova Solicitação</a>
 			</div>
 		</div>
 	</body>

@@ -6,7 +6,7 @@
 			<div id="center">
 			<h2>Adicionar Cliente</h2>
 				<div id="content">
-				<form action="../controller/cliente.php?action=create" method="post" name='form' onsubmit="return validateCliente()">
+				<form action="../controller/cliente.php?action=create" method="post" name='form' >
 					Nome:<br />
 					<input type="text" name="nome" /><br />
 					Email:<br />

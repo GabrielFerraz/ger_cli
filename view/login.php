@@ -3,23 +3,6 @@
 	require_once "../model/database.php";
 	require_once "../model/cliente.php";
 
-if (isset($_POST)){
-	$user = $_POST['login'];
-	$pass = $_POST['senha'];
-	$aut = new User;
-	if($aut->authenticate($user,$pass)) {
-	    session_start();
-	   	$_SESSION['user_id'] = $aut->id;
-	   	$_SESSION['permissao'] = $aut->permissao;
-	    $_SESSION['login'] = true;
-	    header("location: ../view/admin_home.php");
-	}
-	else{
-	    $_SESSION['flash_notice'] = "Login e Senha n&atilde;o conferem";
-
-	}
-}
-
 if(isset($_SESSION['flash_notice'])) {
     echo "<div class='flash_bad'>".$_SESSION['flash_notice']."</div>";
     unset($_SESSION['flash_notice']);

@@ -25,8 +25,12 @@
 			$solicitacao->status = $_POST['status'];
 			echo $id;
 			$solicitacao->update();
-			
-			header("location: ../view/solicitacoes.php");
+			$id_cliente = $_POST['cliente'];
+			if($_POST['status']=="Em Negociação"){
+				header("location: ../view/add_negociacao.php?id=$id_cliente");
+			}else{
+				header("location: ../view/solicitacoes.php");
+			}
 			break;
 	}
 

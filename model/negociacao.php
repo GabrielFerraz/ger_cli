@@ -4,7 +4,7 @@ Class Negociacao {
 	
 	protected static $db_fields = array('id_cliente','responsavel','reuniao','proposta','status','id');
 	
-	public static $table_name = "solicitacoes";
+	public static $table_name = "negociacoes";
 	public $id_cliente;
 	public $responsavel;
 	public $reuniao;

@@ -7,7 +7,7 @@
 
 		<div id="body">
 			<div id="center">
-				<h2 >Solicitações</h2>
+				<h2 >Projetos</h2>
 				<div id="content">
 					<table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
 						<thead>
@@ -34,7 +34,7 @@
 									echo $projeto->data_final;
 									echo "</td>";
 									echo "<td>";
-									echo $solicitacao->parcelas;
+									echo $projeto->parcelas;
 									echo "</td>";
 								echo "</tr>";
 							}
@@ -50,7 +50,6 @@
 						 </tfoot> 
 					</table>
 				</div>
-				<a href="add_projeto.php">Novo Projeto</a>
 			</div>
 		</div>
 	</body>

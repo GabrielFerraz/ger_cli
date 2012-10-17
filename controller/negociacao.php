@@ -27,10 +27,12 @@
 			$negociacao->reuniao = $_POST['reuniao'];
 			$negociacao->proposta = $_POST['proposta'];
 			$negociacao->status = $_POST['status'];
-			echo $id;
 			$negociacao->update();
-			
-			header("location: ../view/negociacoes.php");
+			if($_POST['status']=="Contratado"){
+				header("location: ../view/add_projeto.php?id=$id");
+			}else{
+				header("location: ../view/negociacoes.php");
+			}
 			break;
 	}
 

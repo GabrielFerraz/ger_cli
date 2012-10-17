@@ -2,31 +2,26 @@
 	require_once('../include/header.php');
 	require_once "../model/cliente.php";
 	require_once "../model/database.php";
-	$clientes = Cliente::find_all();
-	
+	$id = $_GET['id'];
+	$cliente = Cliente::find_by_id($id);
 ?>
 
 		<div id="body">
 			<div id="center">
-				<h2>Adicionar Solicitação</h2>
+				<h2>Adicionar Negociação</h2>
 				<div id="content">
-					<form action="../controller/solicitacao.php?action=create" method="post" name='form' onsubmit="return validatesolicitacao()">
-						Cliente:<br />
-						<select name="cliente">
-							<?php
-								foreach($clientes as $cliente){
-									echo "<option value=$cliente->id>$cliente->nome</option>";
-								}
-							?>
-						</select><br />
+					<form action="../controller/negociacao.php?action=create" method="post" name='form'>
+						Cliente:<?php echo " $cliente->nome"?><br /><br />
+						<input type="hidden" name="cliente" value="<?php echo $id?>" />
 						Responsável:<br />
 						<select name="responsavel">
 							<option value="Joaquim">Joaquim</option>
 							<option value="Felipe">Felipe</option>
 							<option value="Erik">Erik</option>
 						</select><br />
-						<textarea name="pedido" ></textarea><br />
-						<input type="hidden" name="status" value="Não Respondido" /><br />
+						<input type="hidden" name="proposta" value="Não Enviada" /><br />
+						<input type="hidden" name="reuniao" value="Pendente" /><br />
+						<input type="hidden" name="status" value="Ativo" /><br />
 						<input type="submit" value="Enviar">
 					</form> 
 				</div>

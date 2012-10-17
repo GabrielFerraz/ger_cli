@@ -3,7 +3,11 @@
 <html>
 	<head>
 	<?php
-	    if (isset($_SESSION['login'])){
+		if (!isset($_SESSION)){
+			session_start();
+			$_SESSION['login'] = false;
+		}
+	    if ($_SESSION['login']){
 	        header("location: ../view/login.php");
 	    }
 	?>
@@ -44,13 +48,13 @@
 		<div id="head">
 			<div id="logo"></div>
 			<div id="menu">
-				<a class="linkMenu" href="#">Home</a>
+				<a class="linkMenu" href="../view/index.php">Home</a>
 				<span class="spanMenu">|</span>
 				<a class="linkMenu" href="../view/solicitacoes.php">Solicitações</a>
 				<span class="spanMenu">|</span>
-				<a class="linkMenu" href="#">Negociações</a>
+				<a class="linkMenu" href="../view/negociacoes.php">Negociações</a>
 				<span class="spanMenu">|</span>
-				<a class="linkMenu" href="#">Projetos</a>
+				<a class="linkMenu" href="../view/projetos.php">Projetos</a>
 				<span class="spanMenu">|</span>
 				<a class="linkMenu" href="../view/clientes.php">Clientes</a>
 			</div>

@@ -2,12 +2,11 @@
 
 Class User {
 	
-	protected static $db_fields = array('login','senha','email','permissao','id');
+	protected static $db_fields = array('login','senha','permissao','id');
 	
 	public static $table_name = "users";
 	public $login;
 	public $senha;
-	public $email;
 	public $permissao;
 	public $id;
 
