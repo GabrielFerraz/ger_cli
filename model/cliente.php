@@ -21,6 +21,11 @@ Class Cliente {
 		$users = self::find_by_sql("SELECT * FROM ".self::$table_name." WHERE id={$id} LIMIT 1");
 		return empty($users) ? false : array_shift($users);
 		}
+		
+	public static function find_by_user_id($id=0) {
+		$users = self::find_by_sql("SELECT * FROM ".self::$table_name." WHERE id_user={$id} LIMIT 1");
+		return empty($users) ? false : array_shift($users);
+	}
 	
 	public static function find_by_sql($sql="") {
 		global $database;
