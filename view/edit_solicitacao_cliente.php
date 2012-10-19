@@ -1,10 +1,13 @@
 <?php
-	require_once('../include/header.php');
+	require_once('../include/header_cliente.php');
 	require_once "../model/cliente.php";
 	require_once "../model/database.php";
 	require_once "../model/solicitacao.php";
 	$solicitacao = Solicitacao::find_by_id($_GET['id']);
 	$clienteCadastrado = Cliente::find_by_id($solicitacao->id_cliente);
+		if($_SESSION['permissao']!=2 ){
+            header("location: ../view/login.php");
+		}
 ?>
 
 		<div id="body">

@@ -1,5 +1,5 @@
 <?php
-	require_once "../include/header.php";
+	require_once "../include/header_cliente.php";
 	require_once "../model/cliente.php";
 	require_once "../model/solicitacao.php";
 	require_once "../model/negociacao.php";
@@ -8,6 +8,9 @@
 	$cliente = new Cliente;
 	$_SESSION['permissao'] = 2;
 	$cliente = Cliente::find_by_user_id($_SESSION['user_id']);
+	if($_SESSION['permissao']!=2 ){
+            header("location: ../view/login.php");
+		}
 ?>
 
 		<div id="body">

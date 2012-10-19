@@ -6,14 +6,13 @@
 		if (!isset($_SESSION)){
 			session_start();
 			$_SESSION['login'] = false;
-			$_SESSION['permissao'] = 0;
-			$_SESSION['user_id'] = 0;
 		}
 		
+  		
 	?>
 		<title>Gerenciador</title>
 		<link rel="stylesheet" type="text/css" href="../css/index.css">
-
+		
 	</head>
 	<body>
 		<div id="head">
@@ -21,12 +20,9 @@
 			<div id="menu">
 				<a class="linkMenu" href="../view/index.php">Home</a>
 				<span class="spanMenu">|</span>
-				<a class="linkMenu" href="../view/solicitacoes.php">Solicitacoes</a>
+				<a class="linkMenu" href="../view/add_solicitacoes_cliente.php">Solicitações</a>
 				<span class="spanMenu">|</span>
-				<a class="linkMenu" href="../view/negociacoes.php">Negociacoes</a>
+				<a class="linkMenu" href="../view/negociacoes.php">Negociações</a>
 				<span class="spanMenu">|</span>
-				<a class="linkMenu" href="../view/projetos.php">Projetos</a>
-				<span class="spanMenu">|</span>
-				<a class="linkMenu" href="../view/clientes.php">Clientes</a>
 			</div>
 		</div>

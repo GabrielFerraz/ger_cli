@@ -1,8 +1,12 @@
 <?php
-	require_once('../include/header.php');
+	require_once('../include/header_cliente.php');
 	require_once "../model/cliente.php";
 	require_once "../model/database.php";
 	$cliente = Cliente::find_by_user_id($_SESSION['user_id']);
+		if($_SESSION['permissao']!=2 || $_SESSION['login']== false ){
+            header("location: ../view/login.php");
+		}
+
 	
 ?>
 
