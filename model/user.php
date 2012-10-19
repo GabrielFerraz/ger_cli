@@ -15,7 +15,6 @@ Class User {
 	public function authenticate($login,$senha) {
 		$sql = "SELECT * FROM ".self::$table_name." ";
 		$sql .= "WHERE login='{$login}' AND senha='{$senha}' LIMIT 1";
-		echo $sql;
 		$user = self::find_by_sql($sql);
 		return empty($user) ? false : array_shift($user);
 	}

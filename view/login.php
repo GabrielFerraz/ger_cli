@@ -1,10 +1,10 @@
 <?php
 	require_once('../include/header_login.php');
 	require_once "../model/database.php";
-	require_once "../model/cliente.php";
+
 
 if(isset($_SESSION['flash_notice'])) {
-    echo "<div class='flash_bad'>".$_SESSION['flash_notice']."</div>";
+    echo "<p class='flash_bad'>".$_SESSION['flash_notice']."</p>";
     unset($_SESSION['flash_notice']);
 }
 ?>
