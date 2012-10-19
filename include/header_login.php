@@ -6,6 +6,8 @@
 		if (!isset($_SESSION)){
 			session_start();
 			$_SESSION['login'] = false;
+			$_SESSION['permissao'] = 0;
+			$_SESSION['user_id'] = 0;
 		}
 	?>
 		<title>Gerenciador</title>
